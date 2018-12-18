@@ -2,11 +2,11 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Diagnostics;
     using System.Linq;
     using System.Text;
-    using System.Threading.Tasks;
-    using System.Diagnostics;
     using System.Threading;
+    using System.Threading.Tasks;
 
     public class Program
     {
@@ -334,11 +334,11 @@
                         numbers[counter] = bubble;
                     }
                 }
+
                 for (int counter = 0; counter < 12; counter++)
                 {
                     Console.Write(numbers[counter] + " ");
                 }
-
             }
 
             public void Eight()
@@ -368,7 +368,6 @@
 
                         {
                             if (arr[i, j, k] > 0)
-
                             {
                                 arr[i, j, k] = 0;
                             }
@@ -414,7 +413,6 @@
                         {
                             sum = arr[i, j];
                         }
-
                     }
                 }
 
@@ -424,6 +422,7 @@
                     {
                         Console.Write(arr[i, j] + " ");
                     }
+
                     Console.WriteLine();
                 }
 
@@ -448,14 +447,15 @@
                         mas[counter] = sum;
                         sum = 0;
                     }
-
                 }
+
                 for (int counter = 0; counter < 128; counter++)
                 {
                     if (mas[counter] != 0)
                     {
                         count_words += 1;
                     }
+
                     avg_length = mas[counter] + avg_length;
                 }
 
@@ -469,24 +469,30 @@
                     Console.WriteLine("The average word length is:" + avg_length);
                 }
             }
+
             public void Twelveth()
             {
-                string FirstString = "";
-                string SecondString = "";
-                string FinalString = "";
+                string firstString = string.Empty;
+                string secondString = string.Empty;
+                string finalString = string.Empty;
                 Console.WriteLine("Enter the first string:");
-                FirstString = Console.ReadLine();
+                firstString = Console.ReadLine();
                 Console.WriteLine("enter the second string:");
-                SecondString = Console.ReadLine();
-                foreach (char ch in FirstString)
-                    if (!SecondString.Contains(ch))
-                        FinalString += ch;
+                secondString = Console.ReadLine();
+                foreach (char ch in firstString)
+                {
+                    if (!secondString.Contains(ch))
+                    {
+                        finalString += ch;
+                    }
                     else
                     {
-                        FinalString += ch;
-                        FinalString += ch;
+                        finalString += ch;
+                        finalString += ch;
                     }
-                Console.WriteLine("Результат = {0}", FinalString);
+                }
+
+                Console.WriteLine("Результат = {0}", finalString);
             }
 
             public void Thirteen()
@@ -494,20 +500,21 @@
                 string str = string.Empty;
                 string star = "*";
                 StringBuilder sb = new StringBuilder();
-                int N = 100000;
+                int n = 100000;
                 Stopwatch swatch = new Stopwatch();
                 swatch.Start();
-                for (int i = 0; i < N; i++)
+                for (int i = 0; i < n; i++)
                 {
                     sb.Append("*");
                 }
+
                 swatch.Stop();
                 TimeSpan ts = new TimeSpan();
                 ts = swatch.Elapsed;
                 Console.WriteLine(ts.ToString());
                 Stopwatch stopWatch = new Stopwatch();
                 stopWatch.Start();
-                for (int i = 0; i < N; i++)
+                for (int i = 0; i < n; i++)
                 {
                     str += star;
                 }
@@ -516,9 +523,7 @@
                 //// Get the elapsed time as a TimeSpan value.
                 TimeSpan times = stopWatch.Elapsed;
                 //// Format and display the TimeSpan value.
-                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}",
-                    times.Hours, times.Minutes, times.Seconds,
-                    times.Milliseconds / 10);
+                string elapsedTime = String.Format("{0:00}:{1:00}:{2:00}.{3:00}", times.Hours, times.Minutes, times.Seconds, times.Milliseconds / 10);
                 Console.WriteLine("RunTime " + elapsedTime);
             }
         }
