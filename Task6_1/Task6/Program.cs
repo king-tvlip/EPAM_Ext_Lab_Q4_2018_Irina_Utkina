@@ -9,6 +9,7 @@
     public class Strings_to_compare
     {
         public delegate List<string> Comparison(List<string> stroka);
+
         public List<string> Compare_strings(List<string> strlist)
         {
             ////возвращает длину строки
@@ -20,6 +21,10 @@
                     var newstring = strlist[i];
                     strlist[i] = strlist[i + 1];
                     strlist[i + 1] = newstring;
+                }
+                else
+                {
+                    strlist.Sort();
                 }
             }
 
@@ -56,7 +61,7 @@
         public static void Main(string[] args)
         {
             Strings_to_compare stringe = new Strings_to_compare();
-            var strlist = new List<string>() { "first line", "second line", "third line" };
+            var strlist = new List<string>() { "first line", "secon line", "third line" };
             stringe.Order_strings(strlist);
             stringe.Show_array(strlist);
             Console.ReadKey();
