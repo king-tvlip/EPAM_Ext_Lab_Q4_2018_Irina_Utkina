@@ -7,12 +7,12 @@
 
     public class Report
     {
-        public void Generate_report()
+        public void GenerateReport()
         {
             throw new System.NotImplementedException();
         }
 
-        public void Edit_report()
+        public void EditReport()
         {
             throw new System.NotImplementedException();
         }

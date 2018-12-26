@@ -6,7 +6,7 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class UnitTest1 //todo pn не мнемоничное имя. Далее у тебя будет бОльшее количество тестов. Лучше бы их делить по разным классам.
+    public class UserAndManagerTest //todo pn не мнемоничное имя. Далее у тебя будет бОльшее количество тестов. Лучше бы их делить по разным классам.
     {
         [TestMethod]
         public void GetTest()
@@ -22,7 +22,7 @@
         public void GetAllTest()
         {
             User user = new User();
-            user.InitiallizeUserRatingAndName();
+            user.InitiallizeUser();
             List<User> getList = null;
             getList = user.GetAll();
             int actual = getList.Count;
@@ -34,7 +34,7 @@
         public void SaveTest()
         {
             User user = new User();
-            user.InitiallizeUserRatingAndName();
+            user.InitiallizeUser();
             bool expected = true;
             List<Themes> pavelsList = new List<Themes>();
             pavelsList.Add(new Themes("Basic", 0, 12));
@@ -46,7 +46,7 @@
         public void DeleteTest()
         {
             User user = new User();
-            user.InitiallizeUserRatingAndName();
+            user.InitiallizeUser();
             bool expected = true;
             bool actual = user.Delete(1);
             Assert.AreEqual(expected, actual, "deleted the wrong element");
@@ -56,7 +56,7 @@
         public void ManagerDelete()
         {
             Manager manager = new Manager();
-            manager.InitiallizeNewManagerAndAttachedUsers();
+            manager.Init();
             bool actual = manager.Delete(1);
             bool expected = true;
             Assert.AreEqual(expected, actual, "You got the wrong theme");
@@ -66,9 +66,9 @@
         public void ManagerSave()
         {
             Manager manager = new Manager();
-            manager.InitiallizeNewManagerAndAttachedUsers();
+            manager.Init();
             Manager pavel = new Manager();
-            pavel.InitiallizeNewManagerAndAttachedUsers();
+            pavel.Init();
             bool actual = manager.Save(pavel);
             bool expected = true;
             Assert.AreEqual(expected, actual, "You attached a new user in a wrong way!");
@@ -78,7 +78,7 @@
         public void ManagerGetTest()
         {
             Manager manager = new Manager();
-            manager.InitiallizeNewManagerAndAttachedUsers();
+            manager.Init();
             string actual = manager.Get(1).Name;
             string expected = "Anna";
             Assert.AreEqual(expected, actual, "You got the wrong name");
@@ -88,7 +88,7 @@
         public void ManagerGetAllTest()
         {
             Manager manager = new Manager();
-            manager.InitiallizeNewManagerAndAttachedUsers();
+            manager.Init();
             int expected = 2;
             List<Manager> actualList = manager.GetAll();
             int actual = actualList.Count;

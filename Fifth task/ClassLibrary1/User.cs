@@ -5,14 +5,8 @@
     using System.Linq;
     using System.Text;
 
-    public class User : Roles, IUserRepository //todo pn класс User отдельно, реализация IUserRepository - отдельно. Переделать
+    public class User : IUserRepository //todo pn класс User отдельно, реализация IUserRepository - отдельно. Переделать
     {
-        /// <summary>
-        /// personal name
-        /// </summary>
-        /// <summary>
-        /// is a list of themes an its rating
-        /// </summary>
         private List<User> listOfUsers = new List<User>();
 
         public User()
@@ -39,7 +33,7 @@
 
         public List<Themes> Rating { get; set; }
 
-        public void InitiallizeUserRatingAndName()
+        public void InitiallizeUser()
         {
             List<Themes> ivansList = new List<Themes>();
             List<Themes> petrsList = new List<Themes>();
@@ -49,7 +43,7 @@
             this.listOfUsers.Add(new User("Petr", petrsList, 2));
         }
 
-        public User Choose_theme_and_rate(User user)
+        public User ChooseThemeAndRate(User user)
         {
             Themes themeAdd = new Themes();
             themeAdd.Theme = "Pascal";
@@ -88,7 +82,7 @@
         public User Get(int id)
         {
             User userToreturn = new User();
-            this.InitiallizeUserRatingAndName();
+            this.InitiallizeUser();
             foreach (var variable in this.listOfUsers)
             {
                 if (variable.ID == id)
@@ -98,7 +92,7 @@
                 }
             }
 
-            return userToreturn; 
+            return userToreturn;
             throw new NotImplementedException();
         }
 

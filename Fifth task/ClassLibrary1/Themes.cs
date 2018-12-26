@@ -29,24 +29,24 @@
 
         public int Themer { get; set; }
 
-        public void Create_theme(Themes new_obj)
+        public void CreateTheme(Themes new_obj)
         {
             this.listOfThemes.Add(new_obj);
             throw new System.NotImplementedException();
         }
 
-        public void Delete_theme(int id)
+        public void DeleteTheme(int id)
         {
             this.listOfThemes.RemoveAt(id);
             throw new System.NotImplementedException();
         }
 
-        public void Edit_theme_name(int id)
+        public void EditThemeName(int id)
         {
             throw new System.NotImplementedException();
         }
 
-        public void Show_theme_name_number(Themes themes)
+        public void ShowThemeNameNumber(Themes themes)
         {
             throw new System.NotImplementedException();
         }

@@ -5,19 +5,10 @@
     using System.Linq;
     using System.Text;
 
-    public class Manager : Roles, IManagerRepository //todo pn класс User отдельно, реализация IUserRepository - отдельно. Переделать
+    public class Manager : IManagerRepository //todo pn класс User отдельно, реализация IUserRepository - отдельно. Переделать
     {
-        /// <summary>
-        /// manager's name
-        /// </summary>
         private List<Manager> managerList = new List<Manager>();
 
-        /// <summary>
-        /// names of users this manager has chosen
-        /// </summary>
-        /// <summary>
-        /// the option to add a certain candidate, initiallizes a List of users attached to a manager
-        /// </summary>
         public Manager()
         {
             this.Name = string.Empty;
@@ -38,7 +29,8 @@
 
         public string Name { get; set; }
 
-        public void InitiallizeNewManagerAndAttachedUsers()
+        //initiallization
+        public void Init()
         {
             List<Themes> ivansList = new List<Themes>();
             List<Themes> petrsList = new List<Themes>();
@@ -73,7 +65,7 @@
         public Manager Get(int id)
         {
             Manager managerToReturn = new Manager();
-            this.InitiallizeNewManagerAndAttachedUsers();
+            this.Init();
             foreach (var variable in this.managerList)
             {
                 if (variable.ID == id)
@@ -98,7 +90,7 @@
         public bool Save(Manager entity)
         {
             int startCapacity = this.managerList.Count();
-            this.managerList.Add(entity); // adds a new User to the list???
+            this.managerList.Add(entity);
             int newCapacity = this.managerList.Count();
             if (newCapacity != startCapacity)
             {

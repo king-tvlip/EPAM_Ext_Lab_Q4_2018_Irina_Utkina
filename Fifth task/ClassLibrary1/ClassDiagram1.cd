@@ -3,21 +3,21 @@
   <Class Name="ClassLibrary1.Themes">
     <Position X="4" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAABAAAAAAAAAAAAAAAEAAAAAAAAAAAgAACAIAAAE=</HashCode>
+      <HashCode>AAACAAAAAAAAAAAQAAAAAEAAQAAAAAAAAgAACAIAAAA=</HashCode>
       <FileName>Themes.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Roles">
     <Position X="7.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAEAAAAAAAAAAABAAJAAAAAAAAAAAAAAAAAAE=</HashCode>
+      <HashCode>AAAAAAAQAAEAAAAAEAAABAABAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Roles.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="ClassLibrary1.Manager">
     <Position X="2.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAABAAAgAAAQAAAEAEAAAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAAAAAgABAAAgAAAQAAAEAAAAAAoACAAAAAAA=</HashCode>
       <FileName>Manager.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -25,7 +25,7 @@
   <Class Name="ClassLibrary1.User">
     <Position X="5.75" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAABAAAAAAAQEBAEAAAEAAgAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAIAAAAAAgABAAAAAAAQEBAEAAAEAAgCAAAAAAAA=</HashCode>
       <FileName>User.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
@@ -33,10 +33,9 @@
   <Class Name="ClassLibrary1.Report">
     <Position X="0.5" Y="1.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAIAAAAAAAABAAAAAAAAAAAEAAAAIAgAEAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIAAAEAAAAAAA=</HashCode>
       <FileName>Report.cs</FileName>
     </TypeIdentifier>
-    <Lollipop Position="0.2" />
   </Class>
   <Interface Name="ClassLibrary1.IUserRepository" Collapsed="true">
     <Position X="7.5" Y="2.75" Width="1.5" />
@@ -48,7 +47,7 @@
   <Interface Name="ClassLibrary1.IManagerRepository" Collapsed="true">
     <Position X="0.5" Y="0.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAA=</HashCode>
       <FileName>IManagerRepository.cs</FileName>
     </TypeIdentifier>
   </Interface>

@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassLibrary1", "ClassLibrary1\ClassLibrary1.csproj", "{C8ACFA72-5BB4-47CD-8849-3A5429D4D2E6}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FinalProject", "ClassLibrary1\FinalProject.csproj", "{C8ACFA72-5BB4-47CD-8849-3A5429D4D2E6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassTest", "ClassTest\ClassTest.csproj", "{8616226B-7213-4023-A24C-1BC766580C1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UserAndManagerTest", "ClassTest\UserAndManagerTest.csproj", "{8616226B-7213-4023-A24C-1BC766580C1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
