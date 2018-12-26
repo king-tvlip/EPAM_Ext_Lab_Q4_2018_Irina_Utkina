@@ -8,6 +8,6 @@
 
     public interface IUserRepository : IBaseRepository<User>
     {
-        User Choose_theme_and_rate(User user);
+        User Choose_theme_and_rate(User user);//todo pn несоблюдение стилистики кода. У тебя до этого все наименования методов были без подчеркиваний. Нужно привести весь код к единому виду.
     }
 }

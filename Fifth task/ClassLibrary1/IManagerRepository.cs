@@ -8,6 +8,6 @@
 
     public interface IManagerRepository : IBaseRepository<Manager>
     {
-        void InitiallizeNewManagerAndAttachedUsers();
+        void InitiallizeNewManagerAndAttachedUsers();//todo pn не самое удачное название метода. Init лучше) Подробности о работе метода можно в summary загнать. Советую не использовать подчеркивания. CamelCase лучше и проще.
     }
 }

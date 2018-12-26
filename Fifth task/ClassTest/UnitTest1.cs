@@ -6,7 +6,7 @@
     using Microsoft.VisualStudio.TestTools.UnitTesting;
 
     [TestClass]
-    public class UnitTest1
+    public class UnitTest1 //todo pn не мнемоничное имя. Далее у тебя будет бОльшее количество тестов. Лучше бы их делить по разным классам.
     {
         [TestMethod]
         public void GetTest()

@@ -12,7 +12,7 @@
         /// <summary>
         /// sets role to a certain user in case this user has no role
         /// </summary>
-        public void Setrole()
+        public void Setrole()//todo pn у тебя даже в одном классе разная стилистика наименования
         {
             throw new System.NotImplementedException();
         }
@@ -20,7 +20,7 @@
         /// <summary>
         /// sets role in case it already exists for a certain user
         /// </summary>
-        public void Change_role()
+        public void Change_role()//todo pn тут
         {
             throw new System.NotImplementedException();
         }
