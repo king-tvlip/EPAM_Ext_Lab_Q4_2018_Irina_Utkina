@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class Manager : Roles, IManagerRepository
+    public class Manager : Roles, IManagerRepository //todo pn класс User отдельно, реализация IUserRepository - отдельно. Переделать
     {
         /// <summary>
         /// manager's name

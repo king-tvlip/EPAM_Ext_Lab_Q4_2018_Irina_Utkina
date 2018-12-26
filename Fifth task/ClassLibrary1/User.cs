@@ -5,7 +5,7 @@
     using System.Linq;
     using System.Text;
 
-    public class User : Roles, IUserRepository
+    public class User : Roles, IUserRepository //todo pn класс User отдельно, реализация IUserRepository - отдельно. Переделать
     {
         /// <summary>
         /// personal name
