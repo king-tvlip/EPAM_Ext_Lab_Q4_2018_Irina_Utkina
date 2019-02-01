@@ -28,8 +28,8 @@
         public static void Main(string[] args)
         {
             int number = -25;
-            number.CheckIfInt();
-            Console.ReadKey();
+            number.CheckIfInt();//todo pn "Напишите расширяющий метод, который определяет, является ли строка положительным целым числом" расширяющий метод для стоки же, а не для int.
+			Console.ReadKey();
         }
     }
 }
