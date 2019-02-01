@@ -28,7 +28,7 @@
     {
         public delegate bool Condition(int number);
 
-        public bool DelegateCondition(int number)
+        public bool DelegateCondition(int number)//todo pn весь метод можно написать одной строкой.
         {
             bool result = true;
             if (number > 0)
@@ -57,11 +57,11 @@
         }
     }
 
-    public class ThirdMethod
+    public class ThirdMethod //todo pn не понял смысла создания класса на каждый из методов.
     {
         public delegate void Condition(int number);
 
-        public bool DelegateCondition(int number)
+        public bool DelegateCondition(int number)//todo pn дублирование кода
         {
             if (number > 0)
             {
@@ -148,7 +148,7 @@
             {
                 SecondMethod second = new SecondMethod();
                 stopwatch.Restart();
-                second.ThroughDelegate(intArray);
+                second.ThroughDelegate(intArray);//todo pn нужно передавать делегат в метод, а ты передаешь только массив.
                 stopwatch.Stop();
                 TimeSpan ts = stopwatch.Elapsed;
                 string elapsedTime = ts.ToString();
@@ -161,8 +161,8 @@
             {
                 ThirdMethod third = new ThirdMethod();
                 stopwatch.Restart();
-                third.ThroughAnonymous(intArray);
-                stopwatch.Stop();
+                third.ThroughAnonymous(intArray);//todo pn аналогично
+				stopwatch.Stop();
                 TimeSpan ts = stopwatch.Elapsed;
                 string elapsedTime = ts.ToString();
                 writer.WriteLine("Third method: " + elapsedTime);
@@ -174,8 +174,8 @@
             {
                 FourthMethod fourth = new FourthMethod();
                 stopwatch.Restart();
-                fourth.ThroughLambda(intArray);
-                stopwatch.Stop();
+                fourth.ThroughLambda(intArray);//todo pn аналогично
+				stopwatch.Stop();
                 TimeSpan ts = stopwatch.Elapsed;
                 string elapsedTime = ts.ToString();
                 writer.WriteLine("Fourth method: " + elapsedTime);
