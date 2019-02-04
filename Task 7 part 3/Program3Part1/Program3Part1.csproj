@@ -4,13 +4,14 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{79257C5A-3062-4DC5-B86C-D4F73BC6C69D}</ProjectGuid>
+    <ProjectGuid>{1EE36EA3-2087-4618-A7D7-2B2939F9A0D1}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Task_7_part_3</RootNamespace>
-    <AssemblyName>Task 7 part 3</AssemblyName>
+    <RootNamespace>Program3Part1</RootNamespace>
+    <AssemblyName>Program3Part1</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -42,7 +43,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
+    <Compile Include="Program3Part1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

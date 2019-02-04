@@ -9,8 +9,10 @@
     using System.Threading;
     using System.Threading.Tasks;
 
-    public class FirstMethod
+    public class Methods
     {
+        public delegate bool Condition(int number);
+
         public void DirectSort(int[] intArray)
         {
             Console.WriteLine("Direct sort:");
@@ -22,31 +24,26 @@
                 }
             }
         }
-    }
-
-    public class SecondMethod
-    {
-        public delegate bool Condition(int number);
 
         public bool DelegateCondition(int number)
         {
             bool result = true;
-            if (number > 0)
-            {
-                result = true;
-            }
-            else
-            {
-                result = false;
-            }
+                if (number > 0)
+                {
+                    result = true;
+                }
+                else
+                {
+                    result = false;
+                }
 
-            return result;
+                return result;
         }
 
-        public void ThroughDelegate(int[] intArray)
+        public void ThroughDelegate(Condition condition, int[] intArray)
         {
             Console.WriteLine("Sort through delegate:");
-            Condition condition = new Condition(this.DelegateCondition);
+            condition = this.DelegateCondition;
             for (int i = 0; i < intArray.Length; i++)
             {
                 if (condition(intArray[i]) == true)
@@ -55,61 +52,7 @@
                 }
             }
         }
-    }
 
-    public class ThirdMethod
-    {
-        public delegate void Condition(int number);
-
-        public bool DelegateCondition(int number)
-        {
-            if (number > 0)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
-            }
-        }
-
-        public void ThroughAnonymous(int[] intArray)
-        {
-            Console.WriteLine("Sort through anonymous method:");
-            Condition condition = delegate(int number)
-            {
-                if (this.DelegateCondition(number) == true)
-                {
-                    Console.WriteLine(number);
-                }
-            };
-            foreach (var num in intArray)
-            {
-                condition(num);
-            }
-        }
-    }
-
-    public class FourthMethod
-    {
-        public delegate bool Condition(int number);
-
-        public void ThroughLambda(int[] intArray)
-        {
-            Console.WriteLine("Sort through Lambda expression:");
-            for (int i = 0; i < intArray.Length; i++)
-            {
-                Condition condition = result => intArray[i] > 0;
-                if (condition(intArray[i]) == true)
-                {
-                    Console.WriteLine(intArray[i]);
-                }
-            }
-        }
-    }
-
-    public class FifthMethod
-    {
         public void SearchThroughLinq(int[] intArray)
         {
             Console.WriteLine("Sort through Linq:");
@@ -123,7 +66,7 @@
         }
     }
 
-    public class Program
+    public class Program3Part3
     {
         public static void Main(string[] args)
         {
@@ -131,9 +74,9 @@
             Stopwatch stopwatch = new Stopwatch();
             int iter = 10;
             StreamWriter writer = File.CreateText("Analysis.txt");
+            Methods first = new Methods();
             while (iter != 1000000)
             {
-                FirstMethod first = new FirstMethod();
                 stopwatch.Start();
                 first.DirectSort(intArray);
                 stopwatch.Stop();
@@ -146,9 +89,9 @@
             iter = 10;
             while (iter != 1000000)
             {
-                SecondMethod second = new SecondMethod();
+                Methods.Condition condition = new Methods.Condition(first.DelegateCondition);
                 stopwatch.Restart();
-                second.ThroughDelegate(intArray);
+                first.ThroughDelegate(condition, intArray);
                 stopwatch.Stop();
                 TimeSpan ts = stopwatch.Elapsed;
                 string elapsedTime = ts.ToString();
@@ -159,9 +102,42 @@
             iter = 10;
             while (iter != 1000000)
             {
-                ThirdMethod third = new ThirdMethod();
+                bool DELegateCondition(int number)
+                {
+                    if (number > 0)
+                    {
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                }
+
+                Methods.Condition conDITION = delegate(int number)
+                {
+                    if (DELegateCondition(number) == true)
+                    {
+                        Console.WriteLine(number);
+                        return true;
+                    }
+                    else
+                    {
+                        return false;
+                    }
+                };
+
+                void ThroughAnonymous(Methods.Condition COndition, int[] IntArray)
+                {
+                    Console.WriteLine("Sort through anonymous method:");
+                    foreach (var num in intArray)
+                    {
+                        conDITION(num);
+                    }
+                }
+
                 stopwatch.Restart();
-                third.ThroughAnonymous(intArray);
+                ThroughAnonymous(conDITION, intArray);
                 stopwatch.Stop();
                 TimeSpan ts = stopwatch.Elapsed;
                 string elapsedTime = ts.ToString();
@@ -172,9 +148,21 @@
             iter = 10;
             while (iter != 1000000)
             {
-                FourthMethod fourth = new FourthMethod();
+                Methods.Condition condition = number => number > 0;
+                void ThroughLambda(Methods.Condition Condition, int[] IntArray)
+                {
+                    Console.WriteLine("Sort through Lambda expression:");
+                    for (int i = 0; i < IntArray.Length; i++)
+                    {
+                        if (Condition(IntArray[i]) == true)
+                        {
+                            Console.WriteLine(IntArray[i]);
+                        }
+                    }
+                }
+
                 stopwatch.Restart();
-                fourth.ThroughLambda(intArray);
+                ThroughLambda(condition, intArray);
                 stopwatch.Stop();
                 TimeSpan ts = stopwatch.Elapsed;
                 string elapsedTime = ts.ToString();
@@ -186,8 +174,7 @@
             while (iter != 1000000)
             {
                 stopwatch.Restart();
-                FifthMethod fifth = new FifthMethod();
-                fifth.SearchThroughLinq(intArray);
+                first.SearchThroughLinq(intArray);
                 stopwatch.Stop();
                 TimeSpan ts = stopwatch.Elapsed;
                 string elapsedTime = ts.ToString();
